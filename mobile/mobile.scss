@@ -1,0 +1,32 @@
+.topic-list {
+  &.sticky-header {
+    .topic-list-header {
+      z-index: 4;
+    }
+  }  
+  .topic-list-data {
+    position: relative;
+    .pull-left {
+      label {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;        
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background: rgba(var(--tertiary-rgb), 0.03);
+        &:hover,
+        &:active {
+          background: rgba(var(--tertiary-rgb), 0.1);
+        }
+        &.selected {
+          background: rgba(var(--tertiary-rgb), 0.3);
+        }        
+        input {
+          margin: 1.75em 1em;
+        }
+      }
+    }
+  }
+}
