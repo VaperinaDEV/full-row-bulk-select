@@ -3,7 +3,7 @@
     .topic-list-header {
       z-index: 3;
     }
-  }  
+  }
   .topic-list-item {
     position: relative;
     &:first-child {
@@ -21,6 +21,7 @@
         width: 100%;
         height: 100%;
         max-width: 100%;
+        border-left: none;
         z-index: 2;
         label {
           height: calc(100% - 31px);
