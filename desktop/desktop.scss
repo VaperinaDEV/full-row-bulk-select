@@ -6,6 +6,15 @@
   }  
   .topic-list-item {
     position: relative;
+    &:first-child {
+      .topic-list-data {
+        &.bulk-select {
+          label {
+            height: calc(100% - 33px);
+          }
+        }
+      }
+    }
     .topic-list-data {
       &.bulk-select {
         position: absolute;        
@@ -14,7 +23,7 @@
         max-width: 100%;
         z-index: 2;
         label {
-          height: calc(100% - 30px);
+          height: calc(100% - 31px);
           align-items: center;
           background: rgba(var(--tertiary-rgb), 0.03);
           &:hover,
