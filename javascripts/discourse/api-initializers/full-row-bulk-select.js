@@ -55,9 +55,9 @@ export default {
                 const topicListItem = bulkSelect.parentElement;
                 const itemHeight = topicListItem.offsetHeight;
                 bulkSelect.style.height = itemHeight + 'px';
+
+                setBulkSelectHeight()
               }
-              
-              setBulkSelectHeight();
             });
           }
         },
