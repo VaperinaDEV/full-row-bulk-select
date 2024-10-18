@@ -50,10 +50,14 @@ export default {
                 }
               }
 
+              // Full row bulk select height
+              
               const bulkSelect = this.element.querySelector(".bulk-select.topic-list-data");
+              
               if (bulkSelect) {
                 const topicListItem = bulkSelect.parentElement;
                 const itemHeight = topicListItem.offsetHeight;
+                
                 bulkSelect.style.height = itemHeight + 'px';
 
                 setBulkSelectHeight()
