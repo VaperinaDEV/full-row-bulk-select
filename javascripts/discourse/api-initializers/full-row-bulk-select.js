@@ -4,6 +4,17 @@ import { schedule } from "@ember/runloop";
 import { RUNTIME_OPTIONS } from "discourse-common/lib/raw-handlebars-helpers";
 import { htmlSafe } from "@ember/template";
 
+function setBulkSelectHeight() {
+  const topicListItems = document.querySelectorAll('.topic-list-item');
+
+  topicListItems.forEach(item => {
+    const bulkSelect = item.querySelector('.bulk-select');
+    const itemHeight = item.offsetHeight;
+
+    bulkSelect.style.height = itemHeight + 'px';
+  });
+}
+
 export default {
   name: "full-row-bulk-select",
   
@@ -37,6 +48,19 @@ export default {
                   title.addEventListener("focus", this._onTitleFocus);
                   title.addEventListener("blur", this._onTitleBlur);
                 }
+              }
+
+              // Full row bulk select height
+              
+              const bulkSelect = this.element.querySelector(".bulk-select.topic-list-data");
+              
+              if (bulkSelect) {
+                const topicListItem = bulkSelect.parentElement;
+                const itemHeight = topicListItem.offsetHeight;
+                
+                bulkSelect.style.height = itemHeight + 'px';
+
+                setBulkSelectHeight()
               }
             });
           }
